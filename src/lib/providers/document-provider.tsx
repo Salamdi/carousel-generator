@@ -18,6 +18,8 @@ import { defaultValues } from "@/lib/default-document";
 import { KeysProvider } from "@/lib/providers/keys-context";
 import { useKeys } from "@/lib/hooks/use-keys";
 import { StatusProvider } from "@/lib/providers/editor-status-context";
+import { useEffect } from "react";
+import { MultiSlideSchema } from "../validation/slide-schema";
 
 const FORM_DATA_KEY = "documentFormKey";
 
@@ -33,6 +35,28 @@ export function DocumentProvider({ children }: { children: React.ReactNode }) {
     resolver: zodResolver(DocumentSchema),
     defaultValues: getSavedData(),
   });
+
+  useEffect(() => {
+    const hash = typeof window !== "undefined" ? window.location.hash : undefined;
+    if (hash) {
+      try {
+        const data = decodeURIComponent(atob(hash.slice(1)));
+        const parsedData = JSON.parse(data) as z.infer<typeof MultiSlideSchema>;
+        const safeParseResult = MultiSlideSchema.safeParse(parsedData);
+        if (safeParseResult.success) {
+          const slides = safeParseResult.data as z.infer<typeof MultiSlideSchema>;
+          documentForm.setValue("slides", slides);
+        } else {
+          console.error(safeParseResult.error);
+        }
+      } catch (err) {
+        console.error(err);
+      } finally {
+        location.hash = "";
+      }
+    }
+  }, []);
+
   usePersistFormValues({
     localStorageKey: FORM_DATA_KEY,
     values: documentForm.getValues(),
