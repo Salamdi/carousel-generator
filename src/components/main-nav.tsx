@@ -59,7 +59,6 @@ export function MainNav({ handlePrint, isPrinting, className }: MainNavProps) {
             )}
           </div>
         </Button>
-        <StarOnGithub />
         <Link
           className="block lg:hidden"
           href={"https://github.com/FranciscoMoretti/carousel-generator"}
