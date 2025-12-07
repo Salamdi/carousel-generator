@@ -40,7 +40,7 @@ export function DocumentProvider({ children }: { children: React.ReactNode }) {
     const hash = typeof window !== "undefined" ? window.location.hash : undefined;
     if (hash) {
       try {
-        const data = decodeURIComponent(atob(hash.slice(1)));
+        const data = decodeURIComponent(atob(decodeURIComponent(hash.slice(1))));
         const parsedData = JSON.parse(data) as z.infer<typeof MultiSlideSchema>;
         const safeParseResult = MultiSlideSchema.safeParse(parsedData);
         if (safeParseResult.success) {
