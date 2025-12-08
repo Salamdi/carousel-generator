@@ -9,8 +9,7 @@ import { EditorMenubar } from "./editor-menubar";
 import { Download, Loader2Icon, Settings } from "lucide-react";
 import Pager from "./pager";
 import { FilenameForm } from "./forms/filename-form";
-import { BringYourKeysDialog } from "@/components/api-keys-dialog";
-import { StarOnGithub } from "@/components/star-on-github";
+import Logo from '../app/icon1.png';
 
 export type NavItem = {
   title: string;
@@ -36,7 +35,7 @@ export function MainNav({ handlePrint, isPrinting, className }: MainNavProps) {
     >
       <div className="flex gap-4">
         <Link href="/" className="items-center space-x-2 flex">
-          <Icons.logo />
+          <img src={Logo.src} className="w-10 h-10" />
           <span className="hidden font-bold md:inline-block">
             Carousel Generator
           </span>
