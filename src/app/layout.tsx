@@ -13,7 +13,6 @@ import {
 import { GeistSans, GeistMono } from "geist/font";
 import { Toaster } from "@/components/ui/toaster";
 import { DM_Sans, DM_Serif_Display } from "next/font/google";
-import { SiteFooter } from "@/components/site-footer";
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -100,6 +99,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Generate Carousel" />
+      </head>
       <body
         className={`${dm_sans.variable} ${dm_serif_display.variable} ${pt_serif.variable} ${roboto.variable} ${roboto_condensed.variable} ${ultra.variable} ${inter.variable} ${syne.variable} ${archivoBlack.variable}  ${montserrat.variable}  ${GeistSans.variable} flex flex-col min-h-screen items-stretch justify-between antialiased`}
       >
