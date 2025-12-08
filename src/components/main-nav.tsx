@@ -58,24 +58,6 @@ export function MainNav({ handlePrint, isPrinting, className }: MainNavProps) {
             )}
           </div>
         </Button>
-        <Link
-          className="block lg:hidden"
-          href={"https://github.com/FranciscoMoretti/carousel-generator"}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div
-            className={cn(
-              buttonVariants({
-                variant: "ghost",
-              }),
-              "w-9 px-0"
-            )}
-          >
-            <Icons.gitHub className="h-5 w-5" />
-            <span className="sr-only">GitHub</span>
-          </div>
-        </Link>
         {/* // TODO: Re-enable your own keys system  */}
         {/* <BringYourKeysDialog
           triggerButton={
