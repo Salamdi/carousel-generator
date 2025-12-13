@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold">1. Overview</h2>
           <p>
-            The LinkedIn Carousel Generator Chrome extension ("the Extension", "we", "us") helps
+            The LinkedIn Carousel Generator Chrome extension (&quot;the Extension&quot;, &quot;we&quot;, &quot;us&quot;) helps
             users create LinkedIn carousel PDFs from web pages or user-provided text. The Extension
             extracts readable content on user request, generates slide content using a remote
             language model, allows users to edit slides and visual settings, and exports the result
@@ -36,7 +36,7 @@ export default function PrivacyPolicy() {
           <h3 className="font-semibold">2.1 User-Provided Content</h3>
           <p>
             The Extension processes text extracted from the currently active web page only when the
-            user explicitly clicks "Generate from page", as well as text manually pasted by the
+            user explicitly clicks &quot;Generate from the page content&quot;, as well as text manually pasted by the
             user. This content is used solely to generate slide summaries and carousel layouts.
           </p>
 
@@ -121,7 +121,7 @@ export default function PrivacyPolicy() {
           <h2 className="text-xl font-semibold">9. Changes to This Policy</h2>
           <p>
             We may update this Privacy Policy to reflect changes in functionality or legal
-            requirements. Updates will be reflected by revising the "Last updated" date.
+            requirements. Updates will be reflected by revising the &quot;Last updated&quot; date.
           </p>
         </section>
 
